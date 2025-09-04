@@ -1,0 +1,673 @@
+/* Definição de Cores e Fontes Globais */
+:root {
+  --cor-fundo-principal: #1a1a2e; /* Azul Escuro Quase Preto */
+  --cor-fundo-secundario: #0f0f1a; /* Mais escuro para contraste */
+  --cor-primaria: #00bcd4; /* Verde Água (Ciano) - Vibrante */
+  --cor-secundaria: #3f51b5; /* Azul Davilla - Um pouco mais claro que o logo original */
+  --cor-texto-claro: #e0e0e0; /* Cinza claro para textos */
+  --cor-texto-escuro: #888888; /* Cinza para textos secundários */
+
+  --fonte-titulos: "Montserrat", sans-serif; /* Usaremos essa fonte para títulos */
+  --fonte-corpo: "Open Sans", sans-serif; /* Usaremos essa para o corpo do texto */
+}
+
+/* Importação de Fontes do Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap");
+
+/* Reset Básico de CSS para garantir consistência entre navegadores */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-corpo);
+  background-color: var(--cor-fundo-principal); /* Fundo escuro principal */
+  color: var(--cor-texto-claro); /* Cor do texto padrão */
+  line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
+  scroll-behavior: smooth; /* Animação suave para rolagem de âncora */
+}
+
+a {
+  color: var(--cor-primaria); /* Links na cor vibrante */
+  text-decoration: none; /* Sem sublinhado padrão nos links */
+}
+
+a:hover {
+  color: var(--cor-secundaria); /* Mudança de cor ao passar o mouse */
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* Estilos do Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Alinha os dois elementos ao centro */
+  padding: 2.5rem 3rem; /* Garante espaço para a logo de 12rem */
+  background-color: var(--cor-fundo-principal);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.logo img {
+  height: 4rem; /* A altura da logo conforme sua especificação */
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem; /* Diminui o espaço entre os links */
+}
+
+.nav a {
+  color: var(--cor-texto-claro);
+  font-size: 1rem; /* Diminui o tamanho da fonte do link */
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: var(--cor-primaria);
+}
+
+/* Estilos da Hero Section */
+.hero {
+  height: 90vh; /* Ocupa 90% da altura da tela */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--cor-texto-claro);
+  background: url("images/banner-davilla.png") no-repeat center center/cover; /* Substitua a URL */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito de sobreposição escura para o banner */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-family: var(--fonte-titulos);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--cor-texto-escuro);
+}
+
+/* Estilos do Botão CTA */
+.cta-button {
+  display: inline-block;
+  padding: 0.8rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 2px solid var(--cor-primaria);
+  color: var(--cor-primaria);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--cor-primaria);
+  color: var(--cor-fundo-principal);
+  transform: scale(1.05); /* Efeito de crescimento sutil */
+}
+
+/* Estilos da Seção de Portfólio */
+.portfolio {
+  padding: 6rem 3rem;
+  text-align: center;
+}
+
+.portfolio h2 {
+  font-size: 2.5rem;
+  font-family: var(--fonte-titulos);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio p {
+  font-size: 1.2rem;
+  color: var(--cor-texto-escuro);
+  margin-bottom: 3rem;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.portfolio-item {
+  background-color: var(--cor-fundo-secundario);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 3rem;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-10px); /* Animação de elevação */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.item-content {
+  padding: 3rem;
+  text-align: left;
+}
+
+.item-content h3 {
+  font-family: var(--fonte-titulos);
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--cor-primaria);
+}
+
+.item-content p {
+  font-size: 1rem;
+  color: var(--cor-texto-claro);
+  margin-bottom: 1rem;
+}
+
+.item-link {
+  display: inline-block;
+  color: var(--cor-primaria);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.item-link:hover {
+  color: var(--cor-secundaria);
+}
+
+/* Estilos da Seção de Depoimentos */
+.testemunhos {
+  padding: 6rem 3rem;
+  text-align: center;
+  background-color: var(--cor-fundo-secundario);
+}
+
+.negrito {
+  font-weight: bold;
+}
+
+.testemunhos h2 {
+  font-size: 2.5rem;
+  font-family: var(--fonte-titulos);
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.testemunhos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.depoimento-card {
+  background-color: var(--cor-fundo-principal);
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.depoimento-card:hover {
+  transform: translateY(-5px); /* Efeito de elevação sutil */
+}
+
+.depoimento-card p {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--cor-texto-claro);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.depoimento-card cite {
+  display: block;
+  font-size: 1rem;
+  color: var(--cor-primaria);
+  font-weight: 600;
+}
+
+/* Estilos da Seção de Contato */
+/* Estilos da Seção de Contato - WhatsApp */
+.contato-wpp {
+  padding: 6rem 3rem;
+  text-align: center;
+  background-color: var(--cor-fundo-principal);
+}
+
+.contato-wpp h2 {
+  font-size: 2.5rem;
+  font-family: var(--fonte-titulos);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.contato-wpp p {
+  font-size: 1.2rem;
+  color: var(--cor-texto-escuro);
+  margin-bottom: 3rem;
+}
+
+.contato-wpp .cta-button {
+  display: inline-block;
+  padding: 0.8rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 2px solid var(--cor-primaria);
+  color: var(--cor-primaria);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.contato-wpp .cta-button:hover {
+  background-color: var(--cor-primaria);
+  color: var(--cor-fundo-principal);
+  transform: scale(1.05);
+}
+
+/* Estilos do Rodapé */
+.footer {
+  background-color: var(--cor-fundo-secundario);
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer p {
+  font-size: 0.9rem;
+  color: var(--cor-texto-escuro);
+  margin-bottom: 1rem;
+}
+
+.social-icons a {
+  color: var(--cor-texto-claro);
+  font-size: 1.5rem;
+  margin: 0 0.8rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--cor-primaria);
+}
+
+/* ========================================= */
+/* Media Queries para Responsividade         */
+/* ========================================= */
+
+/* Para telas menores que 992px (tablets maiores e desktops menores) */
+@media (max-width: 992px) {
+  .header {
+    padding: 1.5rem 2rem;
+  }
+
+  .nav ul {
+    gap: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .portfolio h2,
+  .testemunhos h2,
+  .contato h2 {
+    font-size: 2.2rem;
+  }
+
+  .portfolio p,
+  .testemunhos p,
+  .contato p {
+    font-size: 1.1rem;
+  }
+
+  .portfolio-grid,
+  .testemunhos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* Para telas menores que 768px (tablets e celulares grandes) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    text-align: center;
+  }
+
+  .nav {
+    margin-top: 1.5rem;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+  }
+
+  .hero {
+    height: 70vh;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .portfolio,
+  .testemunhos,
+  .contato {
+    padding: 4rem 1.5rem;
+  }
+
+  .portfolio h2,
+  .testemunhos h2,
+  .contato h2 {
+    font-size: 2rem;
+  }
+
+  .portfolio-item,
+  .depoimento-card {
+    padding: 1.5rem;
+  }
+
+  .item-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .item-content p {
+    font-size: 0.95rem;
+  }
+
+  .depoimento-card p {
+    font-size: 1rem;
+  }
+
+  .contato-form {
+    padding: 1rem;
+  }
+}
+
+/* Para telas menores que 480px (celulares) */
+@media (max-width: 480px) {
+  .header {
+    padding: 0.8rem 1rem;
+  }
+
+  .logo img {
+    height: 2.5rem;
+  }
+
+  .nav ul {
+    gap: 0.5rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .cta-button {
+    padding: 0.7rem 2rem;
+    font-size: 1rem;
+  }
+
+  .portfolio h2,
+  .testemunhos h2,
+  .contato h2 {
+    font-size: 1.8rem;
+  }
+
+  .portfolio p,
+  .testemunhos p,
+  .contato p {
+    font-size: 0.9rem;
+  }
+
+  .footer p {
+    font-size: 0.8rem;
+  }
+
+  .social-icons a {
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+  }
+}
+/* ========================================= */
+/* Estilos da Página de Detalhes de Projeto  */
+/* ========================================= */
+.project-detail {
+  max-width: 1000px;
+  margin: 4rem auto 2rem auto;
+  padding: 0 3rem;
+  color: var(--cor-texto-claro);
+}
+
+.project-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.project-header h1 {
+  font-family: var(--fonte-titulos);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.project-header p {
+  font-size: 1.2rem;
+  color: var(--cor-texto-escuro);
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  margin-bottom: 3rem;
+}
+
+.project-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.section-card {
+  background-color: var(--cor-fundo-secundario);
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.section-card h3 {
+  font-family: var(--fonte-titulos);
+  font-size: 1.8rem;
+  color: var(--cor-primaria);
+  margin-bottom: 1rem;
+}
+
+.section-card p,
+.section-card ul {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.section-card ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.section-card li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.section-card li::before {
+  content: "•";
+  color: var(--cor-primaria);
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: -0.2rem;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.tech-list span {
+  background-color: var(--cor-fundo-principal);
+  color: var(--cor-primaria);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Estilos para o botão de chamada à ação (CTA) de contato */
+.contato-cta {
+  text-align: center;
+  padding: 4rem 3rem;
+  background-color: var(--cor-fundo-secundario);
+  margin-top: 4rem;
+}
+
+.contato-cta h2 {
+  font-size: 2.5rem;
+  font-family: var(--fonte-titulos);
+  margin-bottom: 1rem;
+}
+
+.contato-cta p {
+  font-size: 1.2rem;
+  color: var(--cor-texto-escuro);
+  margin-bottom: 2rem;
+}
+
+/* ========================================= */
+/* Media Queries para a página de detalhes   */
+/* ========================================= */
+@media (max-width: 768px) {
+  .project-detail {
+    padding: 0 1.5rem;
+  }
+
+  .project-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .project-header p {
+    font-size: 1rem;
+  }
+
+  .section-card {
+    padding: 2rem;
+  }
+
+  .section-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .section-card p,
+  .section-card ul {
+    font-size: 1rem;
+  }
+
+  .contato-cta h2 {
+    font-size: 2rem;
+  }
+
+  .contato-cta p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-detail {
+    padding: 0 1rem;
+  }
+
+  .project-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .project-header p {
+    font-size: 0.9rem;
+  }
+
+  .section-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .section-card p,
+  .section-card ul {
+    font-size: 0.9rem;
+  }
+
+  .contato-cta h2 {
+    font-size: 1.8rem;
+  }
+
+  .contato-cta p {
+    font-size: 0.9rem;
+  }
+}
