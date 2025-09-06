@@ -23,28 +23,28 @@
 
 body {
   font-family: var(--fonte-corpo);
-  background-color: var(--cor-fundo-principal); /* Fundo escuro principal */
-  color: var(--cor-texto-claro); /* Cor do texto padrão */
-  line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
-  scroll-behavior: smooth; /* Animação suave para rolagem de âncora */
+  background-color: var(--cor-fundo-principal);
+  color: var(--cor-texto-claro);
+  line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
 a {
-  color: var(--cor-primaria); /* Links na cor vibrante */
-  text-decoration: none; /* Sem sublinhado padrão nos links */
+  color: var(--cor-primaria);
+  text-decoration: none;
 }
 
 a:hover {
-  color: var(--cor-secundaria); /* Mudança de cor ao passar o mouse */
-  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+  color: var(--cor-secundaria);
+  text-decoration: underline;
 }
 
 /* Estilos do Header */
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Alinha os dois elementos ao centro */
-  padding: 2.5rem 3rem; /* Garante espaço para a logo de 12rem */
+  align-items: center;
+  padding: 2.5rem 3rem;
   background-color: var(--cor-fundo-principal);
   position: sticky;
   top: 0;
@@ -53,41 +53,59 @@ a:hover {
 }
 
 .logo img {
-  height: 4rem; /* A altura da logo conforme sua especificação */
+  height: 4rem;
 }
 
-.nav ul {
+.nav-menu ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem; /* Diminui o espaço entre os links */
+  gap: 1.5rem;
 }
 
-.nav a {
+.nav-menu a {
   color: var(--cor-texto-claro);
-  font-size: 1rem; /* Diminui o tamanho da fonte do link */
+  font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   transition: color 0.3s ease;
 }
 
-.nav a:hover {
+.nav-menu a:hover {
   color: var(--cor-primaria);
+}
+
+/* Estilos do Botão de Hambúrguer */
+.hamburger {
+  display: none; /* Esconde o botão em telas grandes */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 100;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--cor-primaria);
+  margin: 5px 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 /* Estilos da Hero Section */
 .hero {
-  height: 90vh; /* Ocupa 90% da altura da tela */
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: var(--cor-texto-claro);
-  background: url("images/banner-davilla.png") no-repeat center center/cover; /* Substitua a URL */
+  background: url("images/banner-davilla.png") no-repeat center center/cover;
   position: relative;
   overflow: hidden;
 }
 
-/* Efeito de sobreposição escura para o banner */
 .hero::after {
   content: "";
   position: absolute;
@@ -135,7 +153,7 @@ a:hover {
 .cta-button:hover {
   background-color: var(--cor-primaria);
   color: var(--cor-fundo-principal);
-  transform: scale(1.05); /* Efeito de crescimento sutil */
+  transform: scale(1.05);
 }
 
 /* Estilos da Seção de Portfólio */
@@ -171,11 +189,10 @@ a:hover {
   overflow: hidden;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 3rem;
 }
 
 .portfolio-item:hover {
-  transform: translateY(-10px); /* Animação de elevação */
+  transform: translateY(-10px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
 }
 
@@ -187,7 +204,7 @@ a:hover {
 }
 
 .item-content {
-  padding: 3rem;
+  padding: 1.5rem;
   text-align: left;
 }
 
@@ -251,7 +268,7 @@ a:hover {
 }
 
 .depoimento-card:hover {
-  transform: translateY(-5px); /* Efeito de elevação sutil */
+  transform: translateY(-5px);
 }
 
 .depoimento-card p {
@@ -270,7 +287,6 @@ a:hover {
 }
 
 /* Estilos da Seção de Contato */
-/* Estilos da Seção de Contato - WhatsApp */
 .contato-wpp {
   padding: 6rem 3rem;
   text-align: center;
@@ -334,7 +350,7 @@ a:hover {
 }
 
 /* ========================================= */
-/* Media Queries para Responsividade         */
+/* Media Queries para Responsividade         */
 /* ========================================= */
 
 /* Para telas menores que 992px (tablets maiores e desktops menores) */
@@ -343,7 +359,7 @@ a:hover {
     padding: 1.5rem 2rem;
   }
 
-  .nav ul {
+  .nav-menu ul {
     gap: 1.5rem;
   }
 
@@ -376,20 +392,32 @@ a:hover {
 
 /* Para telas menores que 768px (tablets e celulares grandes) */
 @media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    padding: 1rem 1.5rem;
-    text-align: center;
+  /* Mostra o botão de hambúrguer */
+  .hamburger {
+    display: block;
   }
 
-  .nav {
-    margin-top: 1.5rem;
+  /* Esconde o menu de navegação por padrão em telas pequenas */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: var(--cor-fundo-secundario);
+    padding-top: 6rem;
+    transition: right 0.5s ease-in-out;
+    z-index: 999;
   }
 
-  .nav ul {
+  /* Estilos do menu aberto */
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-menu ul {
     flex-direction: column;
-    gap: 0.8rem;
-    text-align: center;
+    align-items: center;
   }
 
   .hero {
@@ -448,7 +476,7 @@ a:hover {
     height: 2.5rem;
   }
 
-  .nav ul {
+  .nav-menu ul {
     gap: 0.5rem;
   }
 
@@ -486,9 +514,8 @@ a:hover {
     margin: 0 0.5rem;
   }
 }
-/* ========================================= */
-/* Estilos da Página de Detalhes de Projeto  */
-/* ========================================= */
+
+/* Estilos da Página de Detalhes de Projeto */
 .project-detail {
   max-width: 1000px;
   margin: 4rem auto 2rem auto;
@@ -603,9 +630,7 @@ a:hover {
   margin-bottom: 2rem;
 }
 
-/* ========================================= */
-/* Media Queries para a página de detalhes   */
-/* ========================================= */
+/* Media Queries para a página de detalhes */
 @media (max-width: 768px) {
   .project-detail {
     padding: 0 1.5rem;
