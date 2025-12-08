@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Davilla Consultoria | Portfólio de Sucesso</title>
+
+    <meta
+      name="description"
+      content="Desenvolvimento de Software Estratégico e Automação para impulsionar o seu negócio. Portfólio de Sites e Sistemas personalizados."
+    />
+    <meta name="author" content="Davilla Consultoria" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -32,8 +40,8 @@
 
     <section class="hero">
       <div class="hero-content">
-        <h1>Transformando Visões em Realidade Digital.</h1>
-        <p>
+        <h1 class="hero-title">Transformando Visões em Realidade Digital.</h1>
+        <p class="hero-description">
           A Davilla Consultoria é o seu parceiro estratégico para o
           desenvolvimento de software que impulsiona o seu negócio para o
           futuro.
@@ -47,7 +55,7 @@
       <p>Soluções digitais que transformam negócios, do conceito à entrega.</p>
 
       <div class="portfolio-grid">
-        <div class="portfolio-item">
+        <div class="projeto-card">
           <img src="images/projeto1.png" alt="Imagem do Projeto 1" />
           <div class="item-content">
             <h3>Plataforma de E-commerce iPhone Pro Store</h3>
@@ -60,7 +68,9 @@
             </p>
             <a href="projeto1.html" class="item-link">Ver Detalhes</a>
           </div>
+        </div>
 
+        <div class="projeto-card">
           <img src="images/projeto2.png" alt="Imagem do Projeto 2" />
           <div class="item-content">
             <h3>Projeto: Sistema de Gestão para Óticas (PWA)</h3>
@@ -69,15 +79,13 @@
               responsiva, desenvolvida para otimizar as operações diárias de
               óticas de pequeno e médio porte. Utilizando uma arquitetura
               moderna de PWA (Progressive Web App), o sistema oferece uma
-              experiência de usuário fluida e intuitiva, combinando a
-              praticidade de um site com a funcionalidade de um aplicativo
-              nativo. Ele foi projetado para centralizar a gestão de clientes,
-              receitas, agendamentos, estoque e vendas, fornecendo uma solução
-              robusta e segura.
+              experiência de usuário fluida e intuitiva...
             </p>
             <a href="projeto2.html" class="item-link">Ver Detalhes</a>
           </div>
+        </div>
 
+        <div class="projeto-card">
           <img src="images/projeto3.png" alt="Imagem do Projeto 3" />
           <div class="item-content">
             <h3>Sistema de Reservas Online Para Bares e Baladas</h3>
@@ -85,9 +93,7 @@
               O projeto é uma aplicação web full-stack, desenvolvida para
               modernizar a gestão de reservas de um bar/balada. O sistema
               integra um frontend intuitivo para clientes e um painel de
-              controle seguro para administradores, eliminando ineficiências
-              operacionais e a dependência de métodos de comunicação manuais,
-              como o WhatsApp.
+              controle seguro para administradores...
             </p>
             <a href="projeto3.html" class="item-link">Ver Detalhes</a>
           </div>
@@ -101,8 +107,7 @@
         <div class="depoimento-card">
           <p>
             "A Davilla Consultoria transformou nossa visão em uma realidade
-            digital que superou todas as expectativas. O profissionalismo e a
-            dedicação da equipe são incomparáveis."
+            digital que superou todas as expectativas..."
           </p>
           <cite>— Matheus, CEO da Óticas Greece</cite>
         </div>
@@ -110,9 +115,7 @@
         <div class="depoimento-card">
           <p>
             "Nossa empresa precisava de um parceiro que entendesse nossos
-            desafios e entregasse soluções robustas. A Davilla não apenas
-            entregou, como se tornou um pilar estratégico para o nosso
-            crescimento."
+            desafios e entregasse soluções robustas..."
           </p>
           <cite>— Ana S., Fundadora da iPhones PRO Store</cite>
         </div>
@@ -120,13 +123,13 @@
         <div class="depoimento-card">
           <p>
             "Eles são a prova de que é possível unir inovação, agilidade e um
-            suporte incrível. Agradecemos a parceria e os resultados de alto
-            impacto."
+            suporte incrível..."
           </p>
           <cite>— Luis R., Dono UPBAR ESPETO</cite>
         </div>
       </div>
     </section>
+
     <section id="contato" class="contato-wpp">
       <h2>Vamos Conversar sobre o seu Projeto?</h2>
       <p>
@@ -137,16 +140,29 @@
         Iniciar Conversa no WhatsApp.
       </a>
     </section>
+
     <footer class="footer">
       <p>&copy; 2025 Davilla Consultoria. Todos os direitos reservados.</p>
       <div class="social-icons">
-        <a href="https://instagram.com/davillaconsultoria7" target="_blank" aria-label="Instagram Davilla Consultoria">
-      <i class="fab fa-instagram"></i>
-        <a href="https://wa.me/5511944846492" target="_blank"
-          ><i class="fab fa-whatsapp"></i
-        ></a>
+        <a
+          href="https://instagram.com/davillaconsultoria7"
+          target="_blank"
+          aria-label="Instagram Davilla Consultoria"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a
+          href="https://wa.me/5511944846492"
+          target="_blank"
+          aria-label="WhatsApp Davilla Consultoria"
+        >
+          <i class="fab fa-whatsapp"></i>
+        </a>
       </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

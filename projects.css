@@ -1,19 +1,17 @@
 /* ========================================================== */
-/* ESTILOS GLOBAIS E ESPECÍFICOS DA PÁGINA INICIAL (INDEX.HTML) */
+/* 1. DEFINIÇÃO DE CORES E FONTES GLOBAIS (Variáveis) */
 /* ========================================================== */
-
-/* Definição de Cores e Fontes Globais */
 :root {
   /* Cores Refinadas */
-  --cor-fundo-principal: #0f0f1a; /* Azul Escuro Quase Preto */
+  --cor-fundo-principal: #0f0f1a; /* Azul Escuro Quase Preto (Mais profissional) */
   --cor-fundo-secundario: #1a1a2e; /* Azul Escuro para Contraste */
   --cor-primaria: #00bcd4; /* Verde Água (Ciano) - Vibrante e Tecnológico */
-  --cor-secundaria: #3f51b5; /* Azul Davilla - Para Hover */
+  --cor-secundaria: #3f51b5; /* Azul Davilla - Para Hover ou Destaques Secundários */
   --cor-texto-claro: #f0f0f0; /* Branco Gelo (Alta Legibilidade) */
-  --cor-texto-secundario: #a0a0a0; /* Cinza para textos de apoio */
-  --cor-shadow: rgba(0, 0, 0, 0.6); /* Sombra intensa */
+  --cor-texto-secundario: #a0a0a0; /* Cinza para textos de apoio (Melhor Contraste) */
+  --cor-shadow: rgba(0, 0, 0, 0.6); /* Sombra mais intensa */
 
-  /* Tipografia Refinada */
+  /* Tipografia Refinada (Usando as suas fontes) */
   --fonte-titulos: "Montserrat", sans-serif;
   --fonte-corpo: "Open Sans", sans-serif;
 }
@@ -21,9 +19,9 @@
 /* Importação de Fontes do Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap");
 
-/* ========================================= */
-/* 1. RESET E ESTILOS GERAIS */
-/* ========================================= */
+/* ========================================================== */
+/* 2. RESET E ESTILOS GERAIS (Global) */
+/* ========================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -63,9 +61,9 @@ section {
   padding: 6rem 3rem;
 }
 
-/* ========================================= */
-/* 2. HEADER E NAVEGAÇÃO */
-/* ========================================= */
+/* ========================================================== */
+/* 3. HEADER E NAVEGAÇÃO */
+/* ========================================================== */
 .header {
   display: flex;
   justify-content: space-between;
@@ -140,188 +138,25 @@ section {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* ========================================= */
-/* 3. HERO SECTION (ESPECÍFICO INDEX.HTML) */
-/* ========================================= */
-.hero {
-  height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: var(--cor-texto-claro);
-  background: url("images/banner-davilla.png") no-repeat center center/cover;
-  position: relative;
-  overflow: hidden;
-  padding: 0; /* Removido padding para 90vh funcionar bem */
-}
+/* ========================================================== */
+/* 4. SEÇÕES DE CTA E BOTÕES */
+/* (Estilos universais que precisam funcionar tanto no index quanto na página de detalhes) */
+/* ========================================================== */
 
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-  padding: 0 2rem;
-}
-
-.hero-title {
-  font-size: 3.8rem;
-  font-family: var(--fonte-titulos);
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  line-height: 1.1;
-  color: var(--cor-primaria);
-}
-
-.hero-description {
-  font-size: 1.3rem;
-  margin-bottom: 2.5rem;
-  color: var(--cor-texto-claro);
-}
-
-/* ========================================= */
-/* 4. PORTFÓLIO (ESPECÍFICO INDEX.HTML) */
-/* ========================================= */
-.portfolio {
-  padding: 6rem 3rem;
-  text-align: center;
-}
-
-.portfolio h2 {
-  font-size: 2.8rem;
-  font-family: var(--fonte-titulos);
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.portfolio p {
-  font-size: 1.2rem;
-  color: var(--cor-texto-secundario);
-  margin-bottom: 4rem;
-}
-
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
-  max-width: 1300px;
-  margin: 0 auto;
-}
-
-.projeto-card {
-  background-color: var(--cor-fundo-secundario);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 20px var(--cor-shadow);
-}
-
-.projeto-card img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.projeto-card:hover img {
-  transform: scale(1.05);
-}
-
-.item-content {
-  padding: 2rem;
-  text-align: left;
-}
-
-.item-content h3 {
-  font-family: var(--fonte-titulos);
-  font-size: 1.5rem;
-  margin-bottom: 0.7rem;
-  color: var(--cor-primaria);
-  line-height: 1.2;
-}
-
-.item-content p {
-  font-size: 1rem;
-  color: var(--cor-texto-claro);
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-/* ========================================= */
-/* 5. TESTEMUNHOS (ESPECÍFICO INDEX.HTML) */
-/* ========================================= */
-.testemunhos {
-  padding: 6rem 3rem;
-  text-align: center;
-  background-color: var(--cor-fundo-secundario);
-}
-
-.testemunhos h2 {
-  font-size: 2.8rem;
-  font-family: var(--fonte-titulos);
-  font-weight: 700;
-  margin-bottom: 4rem;
-}
-
-.testemunhos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
-  max-width: 1300px;
-  margin: 0 auto;
-}
-
-.depoimento-card {
-  background-color: var(--cor-fundo-principal);
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px var(--cor-shadow);
-  text-align: left;
-}
-
-.depoimento-card p {
-  font-size: 1.1rem;
-  font-style: italic;
-  color: var(--cor-texto-claro);
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-.depoimento-card cite {
-  display: block;
-  font-size: 1rem;
-  color: var(--cor-primaria);
-  font-weight: 600;
-  margin-top: 1rem;
-}
-
-/* ========================================= */
-/* 6. CONTATO CTA (GLOBAL) */
-/* ========================================= */
-.contato-wpp {
+.contato-cta {
   padding: 6rem 3rem;
   text-align: center;
   background-color: var(--cor-fundo-principal);
 }
 
-.contato-wpp h2 {
+.contato-cta h2 {
   font-size: 2.8rem;
   font-family: var(--fonte-titulos);
   font-weight: 700;
   margin-bottom: 0.7rem;
 }
 
-.contato-wpp p {
+.contato-cta p {
   font-size: 1.3rem;
   color: var(--cor-texto-secundario);
   margin-bottom: 3.5rem;
@@ -330,7 +165,6 @@ section {
   margin-right: auto;
 }
 
-/* Estilos do Botão CTA (GLOBAL) */
 .cta-button {
   display: inline-block;
   padding: 1rem 3rem;
@@ -351,9 +185,9 @@ section {
   box-shadow: 0 5px 15px rgba(0, 188, 212, 0.4);
 }
 
-/* ========================================= */
-/* 7. FOOTER (GLOBAL) */
-/* ========================================= */
+/* ========================================================== */
+/* 5. FOOTER */
+/* ========================================================== */
 .footer {
   background-color: var(--cor-fundo-secundario);
   text-align: center;
@@ -382,15 +216,155 @@ section {
   text-shadow: 0 0 10px var(--cor-primaria);
 }
 
-/* ========================================= */
-/* 8. MEDIA QUERIES (Aplica-se a todo o site) */
-/* ========================================= */
+/* ========================================================== */
+/* 6. ESTILOS ESPECÍFICOS PARA PÁGINAS DE DETALHES DE PROJETOS */
+/* ========================================================== */
+
+.project-detail {
+  max-width: 1200px;
+  margin: 4rem auto 2rem auto;
+  padding: 0 3rem;
+  color: var(--cor-texto-claro);
+}
+
+.project-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.project-detail h2 {
+  /* Estilo para os subtítulos (Detalhes do Produto, Painel de Administração, etc.) */
+  font-size: 2.2rem;
+  font-family: var(--fonte-titulos);
+  font-weight: 700;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--cor-texto-claro);
+}
+
+.project-detail h1 {
+  /* H1 Principal da Página */
+  font-size: 3rem;
+}
+
+/* --- LAYOUT DE IMAGENS COM CSS GRID --- */
+.project-image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.detail-small-grid {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.admin-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.project-detail .project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px var(--cor-shadow);
+  margin-bottom: 0;
+}
+
+/* --- ESTILO PREMIUM DOS CARDS DE CONTEÚDO --- */
+.project-sections {
+  padding: 2rem 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-card {
+  background-color: var(--cor-fundo-secundario);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px var(--cor-shadow);
+  border: 1px solid rgba(0, 188, 212, 0.2);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.section-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 188, 212, 0.25);
+}
+
+.section-card h3 {
+  color: var(--cor-primaria);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(0, 188, 212, 0.5);
+  padding-bottom: 0.5rem;
+}
+
+.section-card p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.section-card strong {
+  color: var(--cor-primaria);
+  font-weight: 800;
+}
+
+.section-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.section-card li {
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 20px;
+  line-height: 1.5;
+}
+
+.section-card li::before {
+  content: "\2022";
+  color: var(--cor-primaria);
+  font-size: 1.2rem;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-list span {
+  background-color: var(--cor-fundo-secundario);
+  border: 1px solid var(--cor-primaria);
+  color: var(--cor-primaria);
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.tech-list span:hover {
+  background-color: var(--cor-primaria);
+  color: var(--cor-fundo-principal);
+}
+
+/* ========================================================== */
+/* 7. MEDIA QUERIES E RESPONSIVIDADE (Ajustadas para o novo arquivo) */
+/* ========================================================== */
+
 @media (max-width: 1024px) {
   .header {
     padding: 1.5rem 2rem;
-  }
-  .hero-title {
-    font-size: 3.2rem;
   }
 }
 
@@ -398,9 +372,11 @@ section {
   section {
     padding: 4rem 1.5rem;
   }
+
   .header {
     padding: 1rem 1.5rem;
   }
+
   .hamburger {
     display: block;
   }
@@ -420,26 +396,40 @@ section {
   .nav-menu.active {
     right: 0;
   }
+
   .nav-menu ul {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
   }
+
   .nav-menu a {
     font-size: 1.5rem;
   }
 
-  .hero-title {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  .testemunhos h2,
-  .contato-wpp h2 {
-    font-size: 2.2rem;
+  .project-detail {
+    padding: 0 1.5rem;
   }
 
-  .portfolio-grid {
+  .project-detail h2 {
+    font-size: 1.8rem;
+  }
+  .section-card {
+    padding: 1.5rem;
+  }
+
+  .project-image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-grid {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -450,11 +440,16 @@ section {
   .logo img {
     height: 2.5rem;
   }
-  .hero-title {
-    font-size: 2rem;
+
+  .nav-menu a {
+    font-size: 1.2rem;
   }
-  .testemunhos h2,
-  .contato-wpp h2 {
+
+  .project-detail h1 {
+    font-size: 2.2rem;
+  }
+
+  .contato-cta h2 {
     font-size: 1.8rem;
   }
 }
