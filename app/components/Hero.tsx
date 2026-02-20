@@ -9,7 +9,7 @@ export default function Hero() {
             </div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 max-w-4xl">
                 Automatize sua operação. <br className="hidden md:block" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-blue-600">
                     Escale seu lucro.
                 </span>
             </h1>
