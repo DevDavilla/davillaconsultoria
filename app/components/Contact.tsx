@@ -8,7 +8,7 @@ export default function Contact() {
                 Pare de perder tempo e dinheiro com processos manuais. Vamos desenhar a automação exata para o seu modelo de negócio.
             </p>
             <a
-                href="https://wa.me/55119132891821"
+                href="https://wa.me/5511913289181"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-green-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-green-700 transition-all hover:scale-105 shadow-[0_0_20px_rgba(22,163,74,0.3)]"

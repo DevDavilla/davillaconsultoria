@@ -2,21 +2,24 @@ import React from 'react';
 
 export default function Hero() {
     return (
-        <section className="pt-40 pb-20 px-6 max-w-7xl mx-auto flex flex-col items-center text-center">
+        <section className="pt-32 md:pt-40 pb-20 px-4 sm:px-6 max-w-7xl mx-auto flex flex-col items-center text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-sm text-zinc-300 mb-8">
                 <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-                Soluções em Tecnologia para Negócios
+                Sua solução com tecnologia
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 max-w-4xl">
-                Automatize sua operação. <br className="hidden md:block" />
+
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 max-w-4xl leading-tight">
+                Facilite sua operação.<br />
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-blue-600">
-                    Escale seu lucro.
+                    Sistemas feitos para escalar.
                 </span>
             </h1>
-            <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mb-10">
-                Sistemas sob medida e automações que eliminam o trabalho manual da sua empresa, devolvendo seu tempo para focar no que realmente importa: crescer.
+
+            <p className="text-base sm:text-lg md:text-xl text-zinc-400 max-w-2xl mb-10 px-2">
+                Desenvolvemos plataformas, e-commerces e sistemas exclusivos que resolvem os gargalos administrativos. Você foca na estratégia, nosso software faz o trabalho pesado.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4 sm:px-0">
                 <a
                     href="#contato"
                     className="flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition-all hover:scale-105"
