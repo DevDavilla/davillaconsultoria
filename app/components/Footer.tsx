@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 export default function Footer() {
@@ -16,9 +17,20 @@ export default function Footer() {
         >
             <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="flex flex-col items-center md:items-start gap-2">
-                    <div className="text-lg font-bold tracking-tighter text-zinc-300">
-                        <span className="text-blue-500">Davilla</span> Consultoria.
-                    </div>
+                    <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        className="cursor-pointer relative"
+                    >
+                        <div className="absolute inset-0 bg-blue-600/20 blur-xl opacity-0 group-hover:opacity-100 transition duration-500 rounded-full" />
+
+                        <Image
+                            src="/consultoria-logo.png"
+                            alt="Davilla Consultoria"
+                            width={120}
+                            height={20}
+                            className="relative z-10 object-contain"
+                        />
+                    </motion.div>
                     <p>&copy; {currentYear} Todos os direitos reservados.</p>
                 </div>
 

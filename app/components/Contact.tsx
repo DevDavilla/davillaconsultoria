@@ -51,7 +51,7 @@ export default function Contact() {
                 </motion.a>
 
                 <p className="mt-6 text-sm text-zinc-500">
-                    Atendimento direto com Thulio D'avilla.
+                    Atendimento direto com a equipe D'avilla.
                 </p>
             </motion.div>
         </section>
