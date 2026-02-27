@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://davillaconsultoria.com.br/sitemap.xml
