@@ -130,7 +130,8 @@ export default function Solutions() {
                                 playsInline
                                 onEnded={handleVideoEnd}
                             >
-                                <source src="/reservas-demo.mp4" type="video/mp4" />
+
+                                <source src="https://res.cloudinary.com/duwarlswe/video/upload/v1772214284/reservas-demo_tcbft9.mp4" type="video/mp4" />
                             </video>
 
                             {/* Botão overlay que some quando está tocando */}
