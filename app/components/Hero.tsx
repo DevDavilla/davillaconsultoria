@@ -41,7 +41,7 @@ export default function Hero() {
             >
                 Facilite sua operação<br />
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-blue-600">
-                    Sistemas feitos para escalar.
+                    Sistemas feitos para escalar
                 </span>
             </motion.h1>
 
