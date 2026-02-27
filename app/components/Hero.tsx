@@ -29,7 +29,7 @@ export default function Hero() {
                 className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900/80 backdrop-blur-md border border-zinc-800 text-sm text-zinc-300 mb-8 shadow-xl"
             >
                 <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-                Sua solução com tecnologia
+                Tecnologia e Negócios
             </motion.div>
 
             {/* Título Principal com animação de subida */}
@@ -39,7 +39,7 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 max-w-4xl leading-tight text-white"
             >
-                Facilite sua operação.<br />
+                Facilite sua operação<br />
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-blue-600">
                     Sistemas feitos para escalar.
                 </span>
@@ -68,7 +68,7 @@ export default function Hero() {
                     href="#contato"
                     className="flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-500 transition-all shadow-[0_0_30px_rgba(37,99,235,0.4)]"
                 >
-                    Falar com um Especialista
+                    Aplicar para Análise
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>

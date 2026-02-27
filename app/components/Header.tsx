@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from "next/image"
 import { motion } from 'framer-motion';
 
 export default function Header() {
@@ -16,20 +17,17 @@ export default function Header() {
                 {/* LOGO com animação de brilho */}
                 <motion.div
                     whileHover={{ scale: 1.05 }}
-                    className="text-xl font-bold tracking-tighter cursor-pointer group"
+                    className="cursor-pointer relative"
                 >
-                    <span className="text-blue-500 group-hover:text-blue-400 transition-colors duration-300">Davilla</span>
-                    <span className="text-zinc-50 relative">
-                        Consultoria.
-                        <motion.span
-                            className="absolute -bottom-1 left-0 h-0.5 bg-blue-500"
-                            variants={{
-                                initial: { width: 0 },
-                                hover: { width: "100%" }
-                            }}
-                            transition={{ duration: 0.3 }}
-                        />
-                    </span>
+                    <div className="absolute inset-0 bg-blue-600/20 blur-xl opacity-0 group-hover:opacity-100 transition duration-500 rounded-full" />
+
+                    <Image
+                        src="/consultoria-logo.png"
+                        alt="Davilla Consultoria"
+                        width={160}
+                        height={40}
+                        className="relative z-10 object-contain"
+                    />
                 </motion.div>
 
                 {/* NAVEGAÇÃO */}

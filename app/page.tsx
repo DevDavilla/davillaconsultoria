@@ -1,87 +1,51 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useSpring } from "framer-motion";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Benefits from "./components/Benefits";
+import Solutions from "./components/Solutions";
+import Cases from "./components/Cases";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
-export default function Hero() {
+export default function Home() {
+  // Barra de progresso de leitura no topo (detalhe premium)
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   return (
-    <section className="relative isolate pt-32 md:pt-40 pb-20 px-4 sm:px-6 max-w-7xl mx-auto flex flex-col items-center text-center overflow-hidden">
-
-      {/* EFEITOS DE LUZ ANIMADOS (Glows que respiram) */}
+    <div className="min-h-screen bg-zinc-950 text-zinc-50 font-sans selection:bg-blue-600 selection:text-white overflow-x-hidden">
+      {/* Barra de progresso sutil */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
-        className="absolute top-10 left-1/2 -translate-x-1/2 w-72 h-72 md:w-96 md:h-96 bg-blue-600/30 rounded-full blur-3xl -z-10 pointer-events-none"
-      />
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 0.5, scale: 1.1 }}
-        transition={{ duration: 3, delay: 1, repeat: Infinity, repeatType: "reverse" }}
-        className="absolute top-40 right-10 w-48 h-48 md:w-72 md:h-72 bg-indigo-600/20 rounded-full blur-3xl -z-10 pointer-events-none"
+        className="fixed top-0 left-0 right-0 h-1 bg-blue-600 origin-left z-60"
+        style={{ scaleX }}
       />
 
-      {/* Badge de entrada */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900/80 backdrop-blur-md border border-zinc-800 text-sm text-zinc-300 mb-8 shadow-xl"
-      >
-        <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-        Sua solução com tecnologia
-      </motion.div>
+      <Header />
 
-      {/* Título Principal com animação de subida */}
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 max-w-4xl leading-tight text-white"
+      <motion.main
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="relative"
       >
-        Facilite sua operação.<br />
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
-          Sistemas feitos para escalar.
-        </span>
-      </motion.h1>
+        <Hero />
 
-      {/* Descrição */}
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        className="text-base sm:text-lg md:text-xl text-zinc-400 max-w-2xl mb-10 px-2"
-      >
-        Desenvolvemos plataformas, e-commerces e sistemas exclusivos que resolvem os gargalos administrativos. Você foca na estratégia, nosso software faz o trabalho pesado.
-      </motion.p>
+        {/* Adicionando um espaçamento visual entre seções para as animações respirarem */}
+        <div className="flex flex-col gap-2">
+          <Benefits />
+          <Solutions />
+          <Cases />
+          <Contact />
+        </div>
+      </motion.main>
 
-      {/* Botões com Hover de escala */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.6 }}
-        className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4 sm:px-0"
-      >
-        <motion.a
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          href="#contato"
-          className="flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-500 transition-all shadow-[0_0_30px_rgba(37,99,235,0.4)]"
-        >
-          Falar com um Especialista
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </motion.a>
-        <motion.a
-          whileHover={{ scale: 1.05, backgroundColor: "rgba(39, 39, 42, 1)" }}
-          whileTap={{ scale: 0.95 }}
-          href="#solucoes"
-          className="flex items-center justify-center bg-zinc-900/80 backdrop-blur-sm text-white px-8 py-4 rounded-full font-semibold border border-zinc-700 transition-all"
-        >
-          Ver Soluções
-        </motion.a>
-      </motion.div>
-    </section>
+      <Footer />
+    </div>
   );
 }
