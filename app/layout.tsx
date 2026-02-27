@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Davilla Consultoria | Engenharia de Software e Sistemas sob Medida",
-  description: "Transformamos a operação do seu negócio com sistemas personalizados, automações inteligentes e consultoria tecnológica de alto nível. Especialistas em ReservasClub e PWAs.",
+  description: "Transformamos a operação do seu negócio com sistemas personalizados, automações inteligentes e consultoria tecnológica de alto nível.",
   keywords: ["Consultoria de Software", "Desenvolvimento de Sistemas", "Automação de Processos", "SaaS", "ReservasClub", "Davilla Consultoria", "Sistemas para Empresas"],
   authors: [{ name: "Thulio D'avilla" }],
   creator: "Thulio D'avilla",
