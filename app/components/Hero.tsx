@@ -7,6 +7,22 @@ export default function Hero() {
     return (
         <section className="relative isolate pt-32 md:pt-40 pb-20 px-4 sm:px-6 max-w-7xl mx-auto flex flex-col items-center text-center overflow-hidden">
 
+            {/* VÍDEO DE BACKGROUND */}
+            <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover -z-20 opacity-30 pointer-events-none"
+            >
+                {/* Certifique-se de que a extensão do arquivo seja .mp4, ou altere abaixo se for .webm, etc. */}
+                <source src="/video.mp4" type="video/mp4" />
+                Seu navegador não suporta vídeos.
+            </video>
+
+            {/* Opcional: Uma camada escura extra caso o vídeo seja muito claro */}
+            {/* <div className="absolute inset-0 bg-black/40 -z-10 pointer-events-none"></div> */}
+
             {/* EFEITOS DE LUZ ANIMADOS (Glows que respiram) */}
             <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -40,7 +56,7 @@ export default function Hero() {
                 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 max-w-4xl leading-tight text-white"
             >
                 Facilite sua operação<br />
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-blue-600">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
                     Sistemas feitos para escalar
                 </span>
             </motion.h1>
